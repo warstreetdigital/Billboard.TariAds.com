@@ -1,0 +1,6 @@
+{
+  "name": "TariAds Zimbabwe — Mobile Digital Billboard",
+  "description": "Full-screen mobile digital billboard & slideshow for TariAds Zimbabwe, featuring properties, rentals, vehicles, products, business advertising, direct onboarding contact (Call/WhatsApp 0779 068 932) and scannable QR code for useTariAds.com.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>TariAds Zimbabwe — Mobile Digital Billboard | TariAds Is Here</title>
+    <meta name="description" content="TariAds is live in Zimbabwe. Discover homes, advertise properties, register your business, buy & sell vehicles, and explore active marketplace listings at useTariAds.com." />
+    <meta property="og:title" content="TariAds Zimbabwe — TariAds Is Here. List It. Get Discovered. Grow." />
+    <meta property="og:description" content="Find a home, advertise your property, register your business, and connect directly across Zimbabwe at useTariAds.com." />
+    <meta property="og:image" content="./assets/images/hero_home.jpg" />
+    <meta property="og:url" content="https://useTariAds.com" />
+    <meta name="theme-color" content="#006837" />
+
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <div class="billboard-app" id="billboard-app">
+      <!-- Ambient Glow for Desktop Presentation -->
+      <div class="ambient-glow"></div>
+
+      <!-- Smartphone Device Frame / Digital Billboard Display -->
+      <div class="billboard-frame" id="billboard-frame">
+
+        <!-- TOP BILLBOARD HEADER & STORY PROGRESS BAR -->
+        <header class="billboard-header" id="billboard-header">
+          <!-- 7-Slide Segmented Story Progress Bar -->
+          <div class="progress-segments-row" id="progress-segments">
+            <!-- Populated by JavaScript -->
+          </div>
+
+          <!-- Top Brand & Controls Row -->
+          <div class="top-bar-content">
+            <a href="https://useTariAds.com" target="_blank" rel="noopener noreferrer" class="brand-badge" id="billboard-brand-logo" title="Visit useTariAds.com">
+              <div class="brand-logo-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <div class="brand-text-box">
+                <div class="brand-title">
+                  <span class="part-tari">TARI</span><span class="part-ads">ADS</span>
+                </div>
+                <div class="brand-sub">Zimbabwe</div>
+              </div>
+            </a>
+
+            <div class="top-controls">
+              <div class="badge-live-billboard">
+                <span class="live-dot"></span>
+                <span>Live Marketplace</span>
+              </div>
+
+              <!-- Pause / Resume Toggle -->
+              <button class="btn-ctrl" id="btn-pause-toggle" onclick="togglePause()" aria-label="Pause or Resume Billboard">
+                <svg id="icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <rect x="6" y="4" width="4" height="16" rx="1"/>
+                  <rect x="14" y="4" width="4" height="16" rx="1"/>
+                </svg>
+                <svg id="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Tap Navigation Zones (Left 22% for Prev, Right 22% for Next) -->
+        <div class="tap-nav-zone left" onclick="prevSlide()" title="Previous advertisement"></div>
+        <div class="tap-nav-zone right" onclick="nextSlide()" title="Next advertisement"></div>
+
+        <!-- ==========================================================================
+             THE 7 ADVERTISING BILLBOARD SLIDES
+             ========================================================================== -->
+        <main class="billboard-slides-container" id="slides-deck">
+
+          <!-- SLIDE 1 — PROPERTY (FLAGSHIP): LOOKING FOR A HOME? FIND IT ON TARIADS -->
+          <article class="billboard-slide active" id="slide-0" data-index="0">
+            <img 
+              src="./assets/images/hero_home.jpg" 
+              alt="Prime Zimbabwean residential home in Harare" 
+              class="slide-bg-media"
+              loading="eager"
+              referrerpolicy="no-referrer"
+            />
+            <div class="slide-overlay-gradient"></div>
+
+            <div class="slide-content">
+              <div class="slide-tag-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                <span>Property Marketplace</span>
+              </div>
+
+              <h1 class="billboard-headline">
+                <span>LOOKING FOR A HOME?</span>
+                <span class="gold-text">FIND IT ON TARIADS.</span>
+              </h1>
+
+              <p class="billboard-subtext">
+                Discover houses, apartments, rooms, student accommodation and properties across Zimbabwe.
+              </p>
+
+              <!-- Secondary Property Points -->
+              <div class="trust-badges-bar">
+                <span class="trust-badge-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Houses &amp; Apartments</span>
+                </span>
+                <span class="trust-badge-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Student Housing</span>
+                </span>
+                <span class="trust-badge-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Direct Contact</span>
+                </span>
+              </div>
+
+              <button class="btn-billboard-cta" onclick="openActionSheet('sheet-property-explore')">
+                <span>EXPLORE PROPERTY</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- SLIDE 2 — PROPERTY OWNER: HAVE A PROPERTY TO RENT OR SELL? ADVERTISE IT ON TARIADS -->
+          <article class="billboard-slide" id="slide-1" data-index="1">
+            <img 
+              src="./assets/images/apartment.jpg" 
+              alt="Modern apartment complex in Avondale Harare" 
+              class="slide-bg-media"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            />
+            <div class="slide-overlay-gradient"></div>
+
+            <div class="slide-content">
+              <div class="slide-tag-pill gold">
+                <span>Property Owners &amp; Rentals</span>
+              </div>
+
+              <h2 class="billboard-headline">
+                <span>HAVE A PROPERTY TO RENT OR SELL?</span>
+                <span class="gold-text">ADVERTISE IT ON TARIADS.</span>
+              </h2>
+
+              <p class="billboard-subtext">
+                List your house, apartment, room, or commercial space and connect directly with tenants and buyers.
+              </p>
+
+              <!-- Mentioned Types -->
+              <div class="mention-pills-row">
+                <span class="mention-pill">Houses</span>
+                <span class="mention-pill">Apartments</span>
+                <span class="mention-pill">Rooms</span>
+                <span class="mention-pill">Student Accommodation</span>
+              </div>
+
+              <button class="btn-billboard-cta" onclick="openActionSheet('sheet-rental-explore')">
+                <span>LIST YOUR PROPERTY</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- SLIDE 3 — VEHICLES: BUY OR SELL A VEHICLE. FIND IT ON TARIADS -->
+          <article class="billboard-slide" id="slide-2" data-index="2">
+            <img 
+              src="./assets/images/vehicle.jpg" 
+              alt="Toyota 4x4 vehicle in Zimbabwe" 
+              class="slide-bg-media"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            />
+            <div class="slide-overlay-gradient"></div>
+
+            <div class="slide-content">
+              <div class="slide-tag-pill">
+                <span>Vehicles &amp; Motors</span>
+              </div>
+
+              <h2 class="billboard-headline">
+                <span>BUY OR SELL A VEHICLE.</span>
+                <span class="gold-text">FIND IT ON TARIADS.</span>
+              </h2>
+
+              <p class="billboard-subtext">
+                Connect with dealerships and private sellers for cars, trucks, motorcycles, and spare parts across Zimbabwe.
+              </p>
+
+              <!-- Mentioned Vehicle Types -->
+              <div class="mention-pills-row">
+                <span class="mention-pill">Cars</span>
+                <span class="mention-pill">Trucks</span>
+                <span class="mention-pill">Motorcycles</span>
+                <span class="mention-pill">Spare Parts</span>
+              </div>
+
+              <button class="btn-billboard-cta" onclick="openActionSheet('sheet-vehicles-explore')">
+                <span>EXPLORE VEHICLES</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- SLIDE 4 — PRODUCTS: LOOKING FOR SOMETHING TO BUY? DISCOVER IT ON TARIADS -->
+          <article class="billboard-slide" id="slide-3" data-index="3">
+            <img 
+              src="./assets/images/products_lifestyle.jpg" 
+              alt="Quality solar electronics, smart TVs and home appliances" 
+              class="slide-bg-media"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            />
+            <div class="slide-overlay-gradient"></div>
+
+            <div class="slide-content">
+              <div class="slide-tag-pill gold">
+                <span>Marketplace &amp; Goods</span>
+              </div>
+
+              <h2 class="billboard-headline">
+                <span>LOOKING FOR SOMETHING TO BUY?</span>
+                <span class="gold-text">DISCOVER IT ON TARIADS.</span>
+              </h2>
+
+              <p class="billboard-subtext">
+                Discover solar backup equipment, electronics, home appliances, furniture, and daily essentials.
+              </p>
+
+              <!-- Mentioned Products -->
+              <div class="mention-pills-row">
+                <span class="mention-pill">Solar &amp; Power</span>
+                <span class="mention-pill">Electronics</span>
+                <span class="mention-pill">Appliances</span>
+                <span class="mention-pill">Furniture</span>
+              </div>
+
+              <button class="btn-billboard-cta" onclick="openActionSheet('sheet-products-explore')">
+                <span>DISCOVER PRODUCTS</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- SLIDE 5 — BUSINESS: HAVE A BUSINESS TO PROMOTE? REGISTER IT ON TARIADS -->
+          <article class="billboard-slide" id="slide-4" data-index="4">
+            <img 
+              src="./assets/images/business_advertise.jpg" 
+              alt="Zimbabwean business owner advertising on TariAds" 
+              class="slide-bg-media"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            />
+            <div class="slide-overlay-gradient"></div>
+
+            <div class="slide-content">
+              <div class="slide-tag-pill">
+                <span>For Businesses &amp; Services</span>
+              </div>
+
+              <h2 class="billboard-headline">
+                <span>HAVE A BUSINESS TO PROMOTE?</span>
+                <span class="gold-text">REGISTER IT ON TARIADS.</span>
+              </h2>
+
+              <p class="billboard-subtext">
+                Your business deserves to be seen. Reach customers actively searching for products and services across Zimbabwe.
+              </p>
+
+              <!-- Business categories -->
+              <div class="mention-pills-row">
+                <span class="mention-pill">Companies</span>
+                <span class="mention-pill">Contractors</span>
+                <span class="mention-pill">Retail Shops</span>
+                <span class="mention-pill">Services</span>
+              </div>
+
+              <button class="btn-billboard-cta green" onclick="openActionSheet('sheet-post-ad')">
+                <span>REGISTER YOUR BUSINESS</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- SLIDE 6 — TRUST: FIND. CONNECT. DO BUSINESS. -->
+          <article class="billboard-slide slide-bg-emerald" id="slide-5" data-index="5">
+            <div class="slide-bg-pattern"></div>
+            <div class="slide-overlay-gradient"></div>
+
+            <div class="slide-content">
+              <div class="slide-tag-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Direct &amp; Transparent</span>
+              </div>
+
+              <h2 class="billboard-headline">
+                <span>FIND. CONNECT.</span>
+                <span class="gold-text">DO BUSINESS.</span>
+              </h2>
+
+              <p class="billboard-subtext">
+                TariAds brings Zimbabwe together with direct listings and straightforward communication:
+              </p>
+
+              <div class="mention-pills-row" style="margin-bottom: 6px;">
+                <span class="mention-pill" style="border-color: rgba(34, 197, 94, 0.6); color: #86efac;">✓ Direct owner contact</span>
+                <span class="mention-pill" style="border-color: rgba(34, 197, 94, 0.6); color: #86efac;">✓ Active listings</span>
+                <span class="mention-pill" style="border-color: rgba(34, 197, 94, 0.6); color: #86efac;">✓ Transparent details</span>
+                <span class="mention-pill" style="border-color: rgba(34, 197, 94, 0.6); color: #86efac;">✓ Easy WhatsApp chat</span>
+              </div>
+
+              <button class="btn-billboard-cta" onclick="openActionSheet('sheet-trust-info')">
+                <span>EXPLORE TARIADS</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- SLIDE 7 — TALK TO TARIADS: READY TO BE SEEN? TALK TO TARIADS -->
+          <article class="billboard-slide slide-bg-emerald" id="slide-6" data-index="6">
+            <div class="slide-bg-pattern"></div>
+            <div class="slide-overlay-gradient"></div>
+
+            <div class="slide-content">
+              <div class="slide-tag-pill gold">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>Direct Contact &amp; Onboarding</span>
+              </div>
+
+              <h2 class="billboard-headline">
+                <span>READY TO BE SEEN?</span>
+                <span class="gold-text">TALK TO TARIADS.</span>
+              </h2>
+
+              <!-- Supporting 4 points -->
+              <div class="talk-supporting-grid">
+                <div class="talk-supporting-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Register your business</span>
+                </div>
+                <div class="talk-supporting-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Advertise your property</span>
+                </div>
+                <div class="talk-supporting-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>List your products</span>
+                </div>
+                <div class="talk-supporting-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Ask us anything</span>
+                </div>
+              </div>
+
+              <!-- High Visibility Contact Number Card (Tap-to-call) -->
+              <a href="tel:+263779068932" class="talk-phone-hero-card" id="talk-phone-card" title="Call TariAds directly on 0779 068 932">
+                <div class="talk-phone-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div class="talk-phone-content">
+                  <span class="talk-phone-label">Direct Contact Line</span>
+                  <div class="talk-phone-number">0779 068 932</div>
+                </div>
+                <div class="talk-phone-call-badge">
+                  <span>Tap to Call</span>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+              </a>
+
+              <!-- 3 Strong Action Buttons: WhatsApp (Primary), Call, Visit -->
+              <div class="talk-actions-stack">
+                <!-- 1. WHATSAPP TARIADS (Primary Action) -->
+                <a 
+                  href="https://wa.me/263779068932?text=Hi%20TariAds%2C%20I%20would%20like%20to%20register%2Finquire%20about%20advertising%20on%20TariAds." 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="btn-talk-whatsapp" 
+                  id="btn-talk-whatsapp"
+                >
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.074-2.115-.515-1.422-.59-2.34-2.029-2.411-2.123-.071-.095-.578-.771-.578-1.47 0-.7.367-1.045.498-1.189.13-.143.287-.179.383-.179.096 0 .191.002.275.006.088.005.207-.033.323.245.12.288.409 1.001.445 1.074.036.073.06.158.012.254-.048.096-.072.155-.144.239-.072.083-.151.185-.216.249-.072.071-.147.148-.063.292.084.143.372.614.798.993.548.488 1.01.639 1.154.71.144.072.228.06.312-.036.084-.096.36-.419.456-.563.096-.143.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.347-.108.752z"/>
+                  </svg>
+                  <span>WHATSAPP TARIADS</span>
+                </a>
+
+                <!-- Dual Secondary: CALL TARIADS & VISIT TARIADS -->
+                <div class="talk-dual-buttons-row">
+                  <!-- 2. CALL TARIADS -->
+                  <a href="tel:+263779068932" class="btn-talk-call" id="btn-talk-call">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>CALL TARIADS</span>
+                  </a>
+
+                  <!-- 3. VISIT TARIADS -->
+                  <a href="https://useTariAds.com" target="_blank" rel="noopener noreferrer" class="btn-talk-visit" id="btn-talk-visit">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span>VISIT TARIADS</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Reassurance Line -->
+              <div class="talk-reassurance-line">
+                <span>“Real people. Real help. Real opportunities.”</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 8 — TARIADS IS HERE. LIST IT. GET DISCOVERED. GROW. (QR CODE BILLBOARD & SOCIALS) -->
+          <article class="billboard-slide slide-bg-emerald" id="slide-7" data-index="7">
+            <div class="slide-bg-pattern"></div>
+            <div class="slide-overlay-gradient"></div>
+
+            <div class="slide-content">
+              <div class="slide-tag-pill gold">
+                <span>Marketplace Is Live</span>
+              </div>
+
+              <h2 class="billboard-headline">
+                <span>TARIADS IS HERE.</span>
+                <span class="gold-text">LIST IT. GET DISCOVERED. GROW.</span>
+              </h2>
+
+              <p class="billboard-subtext">
+                Your business and listings deserve to be seen. Visit useTariAds.com and connect with real buyers across Zimbabwe today.
+              </p>
+
+              <!-- Scannable High-Precision QR Code Card leading to useTariAds.com -->
+              <a href="https://useTariAds.com" target="_blank" rel="noopener noreferrer" class="qr-billboard-card" id="qr-direct-link" title="Visit useTariAds.com">
+                <div class="qr-box">
+                  <svg id="tariads-qr-svg"></svg>
+                </div>
+                <div class="qr-info-content">
+                  <span class="qr-scan-label">Scan or Tap to Visit</span>
+                  <div class="qr-url-title">useTariAds.com</div>
+                  <p class="qr-scan-sub">Tap to open useTariAds.com or scan on another phone</p>
+                </div>
+              </a>
+
+              <!-- Follow TariAds Social Channels (Integrated Advertising Card Treatment) -->
+              <div class="social-billboard-block" id="social-billboard-block">
+                <div class="social-block-label">
+                  <span>FOLLOW TARIADS</span>
+                </div>
+                <div class="social-cards-grid">
+                  <!-- TikTok -->
+                  <a href="https://www.tiktok.com/@tariadverts" target="_blank" rel="noopener noreferrer" class="social-btn-card social-tiktok" id="social-link-tiktok" aria-label="Follow TariAds on TikTok @tariadverts">
+                    <div class="social-btn-icon-wrap">
+                      <svg class="social-svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.41a6.33 6.33 0 0 0-.85-.06 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.05a8.16 8.16 0 0 0 4.77 1.52V7.12a4.85 4.85 0 0 1-1-.43z"/>
+                      </svg>
+                    </div>
+                    <div class="social-btn-info">
+                      <span class="social-platform-name">TikTok</span>
+                      <span class="social-handle-name">@tariadverts</span>
+                    </div>
+                    <svg class="social-arrow-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                  </a>
+
+                  <!-- Instagram -->
+                  <a href="https://www.instagram.com/usetariads" target="_blank" rel="noopener noreferrer" class="social-btn-card social-instagram" id="social-link-instagram" aria-label="Follow TariAds on Instagram @usetariads">
+                    <div class="social-btn-icon-wrap">
+                      <svg class="social-svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                      </svg>
+                    </div>
+                    <div class="social-btn-info">
+                      <span class="social-platform-name">Instagram</span>
+                      <span class="social-handle-name">@usetariads</span>
+                    </div>
+                    <svg class="social-arrow-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                  </a>
+
+                  <!-- Facebook -->
+                  <a href="https://www.facebook.com/profile.php?id=61593480252249" target="_blank" rel="noopener noreferrer" class="social-btn-card social-facebook" id="social-link-facebook" aria-label="Follow TariAds on Facebook">
+                    <div class="social-btn-icon-wrap">
+                      <svg class="social-svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                      </svg>
+                    </div>
+                    <div class="social-btn-info">
+                      <span class="social-platform-name">Facebook</span>
+                      <span class="social-handle-name">TariAds</span>
+                    </div>
+                    <svg class="social-arrow-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Primary CTA: VISIT useTariAds.com -->
+              <a href="https://useTariAds.com" target="_blank" rel="noopener noreferrer" class="btn-billboard-cta green" id="btn-final-visit" style="text-decoration: none;">
+                <span>VISIT useTariAds.com</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </main>
+
+        <!-- BILLBOARD BOTTOM BAR (SLIDE COUNTER & REFINED NAVIGATION) -->
+        <footer class="billboard-bottom-bar">
+          <div class="slide-counter-txt" id="slide-counter">1 / 8</div>
+          <div class="desktop-arrows">
+            <button class="btn-arrow" onclick="prevSlide()" aria-label="Previous Ad">‹</button>
+            <button class="btn-arrow" onclick="nextSlide()" aria-label="Next Ad">›</button>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         INTERACTIVE ACTION SHEETS (PULL-UP FROM BOTTOM)
+         ========================================================================== -->
+
+    <!-- Sheet: Get Started on TariAds / Visit useTariAds.com -->
+    <div class="action-sheet-overlay" id="sheet-join-launch" onclick="if(event.target===this) closeActionSheet('sheet-join-launch')">
+      <div class="action-sheet-panel">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+          <div class="sheet-title">TariAds Is Live</div>
+          <button class="btn-sheet-close" onclick="closeActionSheet('sheet-join-launch')">&times;</button>
+        </div>
+        <div class="sheet-body">
+          Explore properties, list your home, register your business, or browse vehicles &amp; products across Zimbabwe right now at <strong>useTariAds.com</strong>.
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+          <a href="https://useTariAds.com" target="_blank" rel="noopener noreferrer" class="btn-billboard-cta green" style="text-decoration: none;">
+            <span>VISIT useTariAds.com NOW</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <form class="sheet-form" onsubmit="handleDirectInquirySubmit(event)" style="margin-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+          <div style="font-size: 11.5px; font-weight: 800; color: var(--tari-gold-bright); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px;">Or Request Direct Assistance</div>
+          <div class="form-field">
+            <label for="join-name">Your Name</label>
+            <input type="text" id="join-name" class="form-input" required placeholder="e.g. Farai Ndlovu" />
+          </div>
+          <div class="form-field">
+            <label for="join-phone">WhatsApp / Phone Number</label>
+            <input type="tel" id="join-phone" class="form-input" required placeholder="e.g. +263 77 123 4567" />
+          </div>
+          <div class="form-field">
+            <label for="join-interest">What Are You Looking To Do?</label>
+            <select id="join-interest" class="form-select">
+              <option value="Find a House / Apartment to Rent">Find a House / Apartment to Rent</option>
+              <option value="List a Property for Rent or Sale">List a Property for Rent or Sale</option>
+              <option value="Register My Business on TariAds">Register My Business on TariAds</option>
+              <option value="Buy or Sell a Vehicle">Buy or Sell a Vehicle</option>
+              <option value="Browse Products & Marketplace">Browse Products &amp; Marketplace</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-billboard-cta" style="margin-top: 4px;">
+            Submit Request
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sheet: Property Explore / Search Intake -->
+    <div class="action-sheet-overlay" id="sheet-property-explore" onclick="if(event.target===this) closeActionSheet('sheet-property-explore')">
+      <div class="action-sheet-panel">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+          <div class="sheet-title">Find a Home on TariAds</div>
+          <button class="btn-sheet-close" onclick="closeActionSheet('sheet-property-explore')">&times;</button>
+        </div>
+        <div class="sheet-body">
+          Looking for a place in Harare, Bulawayo, or across Zimbabwe? Tell us what you need or visit <strong>useTariAds.com</strong> to view current listings.
+        </div>
+        <div style="margin-bottom: 12px;">
+          <a href="https://useTariAds.com" target="_blank" rel="noopener noreferrer" class="btn-billboard-cta green" style="text-decoration: none;">
+            <span>VIEW PROPERTIES ON useTariAds.com</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <form class="sheet-form" onsubmit="handlePropertySearchSubmit(event)">
+          <div class="form-field">
+            <label>Preferred Suburb / City</label>
+            <input type="text" id="prop-suburb" class="form-input" required placeholder="e.g. Borrowdale, Avondale, Mt Pleasant, Bulawayo" />
+          </div>
+          <div class="form-field">
+            <label>Monthly Budget (USD)</label>
+            <input type="text" id="prop-budget" class="form-input" required placeholder="e.g. $400 - $800 / month" />
+          </div>
+          <div class="form-field">
+            <label>Your WhatsApp Contact</label>
+            <input type="tel" id="prop-contact" class="form-input" required placeholder="+263 77..." />
+          </div>
+          <button type="submit" class="btn-billboard-cta">
+            Connect Me with Available Properties
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sheet: Rental & Property Owner Listing Intake -->
+    <div class="action-sheet-overlay" id="sheet-rental-explore" onclick="if(event.target===this) closeActionSheet('sheet-rental-explore')">
+      <div class="action-sheet-panel">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+          <div class="sheet-title">List Your Property on TariAds</div>
+          <button class="btn-sheet-close" onclick="closeActionSheet('sheet-rental-explore')">&times;</button>
+        </div>
+        <div class="sheet-body">
+          Landlords and property owners: Connect directly with tenants and buyers actively looking for accommodation in Zimbabwe.
+        </div>
+        <form class="sheet-form" onsubmit="handlePropertyListSubmit(event)">
+          <div class="form-field">
+            <label>Property Category</label>
+            <select id="rental-cat" class="form-select">
+              <option value="Full House">Full Residential House</option>
+              <option value="Apartment">Apartment / Flat</option>
+              <option value="Room to Rent">Room in Shared House / Cottage</option>
+              <option value="Student Boarding">Student Boarding / Bed</option>
+              <option value="Commercial Space">Commercial / Office Space</option>
+              <option value="Property for Sale">Property for Sale</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Location / Suburb</label>
+            <input type="text" id="rental-location" class="form-input" required placeholder="e.g. Westgate, Eastlea, Mabelreign" />
+          </div>
+          <div class="form-field">
+            <label>Your WhatsApp Contact</label>
+            <input type="tel" id="rental-contact" class="form-input" required placeholder="+263 77..." />
+          </div>
+          <button type="submit" class="btn-billboard-cta green">
+            Advertise This Property
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sheet: Vehicles Explore -->
+    <div class="action-sheet-overlay" id="sheet-vehicles-explore" onclick="if(event.target===this) closeActionSheet('sheet-vehicles-explore')">
+      <div class="action-sheet-panel">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+          <div class="sheet-title">Buy or Sell Vehicles on TariAds</div>
+          <button class="btn-sheet-close" onclick="closeActionSheet('sheet-vehicles-explore')">&times;</button>
+        </div>
+        <div class="sheet-body">
+          Find sedans, SUVs, double cabs, commercial trucks and motorbikes across Harare, Bulawayo, and Zimbabwe, or list your vehicle today.
+        </div>
+        <div style="margin-bottom: 12px;">
+          <a href="https://useTariAds.com" target="_blank" rel="noopener noreferrer" class="btn-billboard-cta green" style="text-decoration: none;">
+            <span>VIEW VEHICLES ON useTariAds.com</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <form class="sheet-form" onsubmit="handleVehicleInquirySubmit(event)">
+          <div class="form-field">
+            <label>Vehicle Make / Model or Listing</label>
+            <input type="text" id="vehicle-query" class="form-input" required placeholder="e.g. Toyota Hilux, Fortuner, Honda Fit, Isuzu" />
+          </div>
+          <div class="form-field">
+            <label>Your WhatsApp Contact</label>
+            <input type="tel" id="vehicle-contact" class="form-input" required placeholder="+263 77..." />
+          </div>
+          <button type="submit" class="btn-billboard-cta">
+            Connect for Vehicle Listings
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sheet: Products Explore -->
+    <div class="action-sheet-overlay" id="sheet-products-explore" onclick="if(event.target===this) closeActionSheet('sheet-products-explore')">
+      <div class="action-sheet-panel">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+          <div class="sheet-title">Products &amp; Marketplace</div>
+          <button class="btn-sheet-close" onclick="closeActionSheet('sheet-products-explore')">&times;</button>
+        </div>
+        <div class="sheet-body">
+          Solar equipment (inverters, lithium batteries, panels), electronics, appliances, furniture, and daily essentials in Zimbabwe.
+        </div>
+        <div style="margin-bottom: 12px;">
+          <a href="https://useTariAds.com" target="_blank" rel="noopener noreferrer" class="btn-billboard-cta green" style="text-decoration: none;">
+            <span>BROWSE PRODUCTS ON useTariAds.com</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <form class="sheet-form" onsubmit="handleProductInquirySubmit(event)">
+          <div class="form-field">
+            <label>Item You Want to Buy or Sell</label>
+            <input type="text" id="product-query" class="form-input" required placeholder="e.g. 5kVA Solar Inverter, 65-inch Smart TV" />
+          </div>
+          <div class="form-field">
+            <label>Your WhatsApp Contact</label>
+            <input type="tel" id="product-contact" class="form-input" required placeholder="+263 77..." />
+          </div>
+          <button type="submit" class="btn-billboard-cta">
+            Submit Product Inquiry
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sheet: Register Your Business / Post Listing -->
+    <div class="action-sheet-overlay" id="sheet-post-ad" onclick="if(event.target===this) closeActionSheet('sheet-post-ad')">
+      <div class="action-sheet-panel">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+          <div class="sheet-title">Register Your Business on TariAds</div>
+          <button class="btn-sheet-close" onclick="closeActionSheet('sheet-post-ad')">&times;</button>
+        </div>
+        <div class="sheet-body">
+          Your business deserves to be seen. Reach real customers actively searching for services and products across Zimbabwe.
+        </div>
+        <form class="sheet-form" onsubmit="handlePostAdSubmit(event)">
+          <div class="form-field">
+            <label for="post-owner-name">Your Name / Business Name</label>
+            <input type="text" id="post-owner-name" class="form-input" required placeholder="e.g. Prime Solar Solutions / Simba Moyo" />
+          </div>
+          <div class="form-field">
+            <label for="post-ad-category">Business / Listing Category</label>
+            <select id="post-ad-category" class="form-select">
+              <option value="Business Services">Business Services &amp; Trade</option>
+              <option value="Solar & Electronics">Solar &amp; Power Equipment</option>
+              <option value="Residential Property">Residential Property</option>
+              <option value="Commercial Real Estate">Commercial Real Estate</option>
+              <option value="Vehicles & Motors">Vehicles &amp; Motors</option>
+              <option value="Retail & Products">Retail &amp; Consumer Products</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="post-contact-info">WhatsApp / Phone Number</label>
+            <input type="tel" id="post-contact-info" class="form-input" required placeholder="e.g. +263 77 000 0000" />
+          </div>
+          <button type="submit" class="btn-billboard-cta green">
+            Register My Business
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sheet: Trust & Marketplace Standard -->
+    <div class="action-sheet-overlay" id="sheet-trust-info" onclick="if(event.target===this) closeActionSheet('sheet-trust-info')">
+      <div class="action-sheet-panel">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+          <div class="sheet-title">Find. Connect. Do Business.</div>
+          <button class="btn-sheet-close" onclick="closeActionSheet('sheet-trust-info')">&times;</button>
+        </div>
+        <div class="sheet-body" style="display: flex; flex-direction: column; gap: 10px;">
+          <p>
+            TariAds brings buyers, tenants, businesses, and property owners together across Zimbabwe with direct communication:
+          </p>
+          <div style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12); padding: 12px; border-radius: 12px;">
+            <div style="font-weight: 800; color: #86efac; margin-bottom: 2px;">• Direct Owner &amp; Seller Contact</div>
+            <div style="font-size: 12.5px; color: #cbd5e1;">Connect directly via phone or WhatsApp without unauthorized middlemen fees.</div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12); padding: 12px; border-radius: 12px;">
+            <div style="font-weight: 800; color: #86efac; margin-bottom: 2px;">• Real Active Marketplace</div>
+            <div style="font-size: 12.5px; color: #cbd5e1;">Browse and advertise residential homes, vehicles, equipment, and businesses.</div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12); padding: 12px; border-radius: 12px;">
+            <div style="font-weight: 800; color: #86efac; margin-bottom: 2px;">• Discover TariAds Online</div>
+            <div style="font-size: 12.5px; color: #cbd5e1;">Visit useTariAds.com anytime to browse or post new listings.</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 6px;">
+          <a href="https://useTariAds.com" target="_blank" rel="noopener noreferrer" class="btn-billboard-cta green" style="text-decoration: none;">
+            <span>VISIT useTariAds.com</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <button class="btn-billboard-cta" onclick="closeActionSheet('sheet-trust-info')">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" role="status" aria-live="polite">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--tari-gold)" stroke-width="2.6">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 14 14"/>
+      </svg>
+      <span id="toast-msg">Notification</span>
+    </div>
+
+    <!-- Strictly Vanilla JavaScript -->
+    <script src="./script.js"></script>
+  </body>
+</html>
