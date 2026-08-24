@@ -14,6 +14,37 @@ let slideStartTime = Date.now();
 let timeRemaining = SLIDE_DURATION_MS;
 let progressAnimationId = null;
 
+// Official Public Cloudflare R2 Billboard Assets
+const TARIADS_PUBLIC_ASSETS = {
+  hero_home: 'https://pub-e10a28ca38cf452da437555e0f90e288.r2.dev/Tariads/tariads_hero_home_1787557877833.jpg',
+  apartment: 'https://pub-e10a28ca38cf452da437555e0f90e288.r2.dev/Tariads/apartment_listing_1787558569391.jpg',
+  student_housing: 'https://pub-e10a28ca38cf452da437555e0f90e288.r2.dev/Tariads/student_housing_1787558583982.jpg',
+  vehicles: 'https://pub-e10a28ca38cf452da437555e0f90e288.r2.dev/Tariads/vehicle_listing_1787558601542.jpg',
+  products: 'https://pub-e10a28ca38cf452da437555e0f90e288.r2.dev/Tariads/products_lifestyle_1787559472162.jpg',
+  business_advertise: 'https://pub-e10a28ca38cf452da437555e0f90e288.r2.dev/Tariads/business_advertise_1787559483769.jpg'
+};
+
+// Track preloaded image URLs to avoid duplicate network requests
+const preloadedImageUrls = new Set();
+
+/**
+ * Intelligent next-slide image preloader.
+ * Preloads only the immediate upcoming photo slide ahead of transition
+ * to ensure silky smooth transitions without wasting mobile data.
+ */
+function preloadNextSlideImage(currentIndex) {
+  const nextIndex = (currentIndex + 1) % SLIDES_COUNT;
+  const nextSlide = document.getElementById(`slide-${nextIndex}`);
+  if (!nextSlide) return;
+
+  const img = nextSlide.querySelector('img.slide-bg-media');
+  if (img && img.src && !preloadedImageUrls.has(img.src)) {
+    const preloader = new Image();
+    preloader.src = img.src;
+    preloadedImageUrls.add(img.src);
+  }
+}
+
 // Touch tracking for swipe gestures
 let touchStartX = 0;
 let touchStartY = 0;
@@ -55,6 +86,7 @@ function initProgressSegments() {
  */
 function initBillboard() {
   updateSlideDisplay(0);
+  preloadNextSlideImage(0);
 }
 
 /**
@@ -70,6 +102,7 @@ function goToSlide(index) {
 
   updateSlideDisplay(currentSlideIndex);
   resetProgressSegments(currentSlideIndex);
+  preloadNextSlideImage(currentSlideIndex);
 
   if (!isPaused) {
     startSlideTimer();
